@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -21,6 +22,7 @@ public class Donation {
 
     private String paymentSource;
 
+    @Max(9999999)
     private BigDecimal amount;
 
     private Date transactionDate;

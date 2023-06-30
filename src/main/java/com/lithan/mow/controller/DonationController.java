@@ -22,6 +22,9 @@ public class DonationController {
     @PostMapping
     public ResponseEntity<?> saveDonation(@RequestBody DonationRequest donationRequest) {
        Donation savedDonation = donationService.saveDonation(donationRequest);
-       return ResponseEntity.ok(savedDonation);
+       if (savedDonation != null ) {
+           return ResponseEntity.ok(savedDonation);
+       }
+       return ResponseEntity.badRequest().body("Amount is out of maximum!");
     }
 }

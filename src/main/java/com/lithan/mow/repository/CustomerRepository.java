@@ -2,6 +2,7 @@ package com.lithan.mow.repository;
 
 import com.lithan.mow.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -16,4 +17,7 @@ public interface CustomerRepository extends JpaRepository<Customer,Long> {
 
     @Query("SELECT c.active FROM Customer c WHERE c.email = :email")
     Boolean findActiveByEmail(@Param("email") String email);
+
+
+
 }

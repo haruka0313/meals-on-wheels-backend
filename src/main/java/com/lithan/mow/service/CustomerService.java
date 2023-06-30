@@ -1,11 +1,8 @@
 package com.lithan.mow.service;
 
 import com.lithan.mow.entity.Customer;
-import com.lithan.mow.entity.Partner;
 import com.lithan.mow.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -40,5 +37,10 @@ public class CustomerService {
     public Optional<Customer> getCustomerByEmail(String email){
         return customerRepository.findByEmail(email);
     }
+
+    public Customer updateProfile(Customer customer){
+        return customerRepository.save(customer);
+    }
+
 
 }

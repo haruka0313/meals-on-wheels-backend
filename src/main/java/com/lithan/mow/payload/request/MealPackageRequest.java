@@ -33,8 +33,8 @@ public class MealPackageRequest {
         return packageName;
     }
 
-    public void setPackageName(String packageName {
-        this.packageName = packageName();
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
     }
 
     public String getMainCourse() {
